@@ -10,5 +10,5 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
 
 sidecar:
-  port: 1111
-  health-uri: http://localhost:8000/health.json
+  port: 8000
+  health-uri: http://http://115.159.199.121:8000/health

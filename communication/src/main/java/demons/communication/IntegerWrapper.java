@@ -1,11 +1,11 @@
-package demons.complicatedClient;
+package demons.communication;
 
 /**
  * Created by demons on 2017/6/26.
  */
 public class IntegerWrapper {
 
-    public Integer number;
+    private Integer number;
 
     protected IntegerWrapper() {
     }
@@ -16,5 +16,9 @@ public class IntegerWrapper {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public Integer getNumber() {
+        return number;
     }
 }

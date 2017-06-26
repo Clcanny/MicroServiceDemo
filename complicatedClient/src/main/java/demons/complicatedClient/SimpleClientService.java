@@ -1,5 +1,6 @@
 package demons.complicatedClient;
 
+import demons.communication.IntegerWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;

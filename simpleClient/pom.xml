@@ -71,6 +71,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
+
+                <dependency>
+                     <groupId>demons</groupId>
+                     <artifactId>communication</artifactId>
+                     <version>1.0-SNAPSHOT</version>
+                 </dependency>
 	</dependencies>
 
 	<build>

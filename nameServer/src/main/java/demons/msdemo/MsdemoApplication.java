@@ -1,4 +1,4 @@
-package demons.msdemo;
+package demons.nameServer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

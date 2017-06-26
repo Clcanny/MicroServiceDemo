@@ -1,7 +1,7 @@
 # Spring properties
 spring:
   application:
-     name: returnparam-service
+     name: return-param-service
 
 # Discovery Server Access
 eureka:

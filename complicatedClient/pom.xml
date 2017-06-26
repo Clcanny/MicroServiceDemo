@@ -74,7 +74,7 @@
 
         <dependency>
             <groupId>demons</groupId>
-            <artifactId>communication</artifactId>
+            <artifactId>communicationClass</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
@@ -90,11 +90,11 @@
                         <!--<phase>clean</phase>-->
                         <!--<configuration>-->
                             <!--<file>-->
-                                <!--/Users/demons/Downloads/MicroServiceDemo/communication/target/communication-1.0-SNAPSHOT.jar-->
+                                <!--/Users/demons/Downloads/MicroServiceDemo/communicationClass/target/communicationClass-1.0-SNAPSHOT.jar-->
                             <!--</file>-->
                             <!--<repositoryLayout>default</repositoryLayout>-->
                             <!--<groupId>demons</groupId>-->
-                            <!--<artifactId>communication</artifactId>-->
+                            <!--<artifactId>communicationClass</artifactId>-->
                             <!--<version>1.0-SNAPSHOT</version>-->
                             <!--<packaging>jar</packaging>-->
                             <!--<generatePom>true</generatePom>-->

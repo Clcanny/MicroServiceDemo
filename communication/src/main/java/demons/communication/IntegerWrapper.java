@@ -1,4 +1,4 @@
-package demons.communication;
+package demons.communicationClass;
 
 /**
  * Created by demons on 2017/6/26.

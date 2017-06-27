@@ -1,0 +1,18 @@
+# HTTP Server
+server:
+  port: 2222   # HTTP (Tomcat) port
+
+# Spring properties
+spring:
+  application:
+     name: simple-client-service
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+ribbon:
+  eureka:
+    enabled: true

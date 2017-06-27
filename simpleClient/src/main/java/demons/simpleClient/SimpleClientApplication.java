@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class SimpleClientApplication {
 
     public static void main(String[] args) {
-        System.setProperty("spring.config.name", "simple-client-server");
         SpringApplication.run(SimpleClientApplication.class, args);
     }
 }

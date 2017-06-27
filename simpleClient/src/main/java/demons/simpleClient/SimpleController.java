@@ -11,12 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SimpleController {
 
-    @GetMapping("")
-    @ResponseBody
-    public IntegerWrapper getNum() {
-	return new IntegerWrapper(2);
-    }
-
     @GetMapping("/number")
     @ResponseBody
     public IntegerWrapper getNumber() {

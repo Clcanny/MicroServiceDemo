@@ -73,6 +73,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>demons</groupId>
             <artifactId>communicationClass</artifactId>
             <version>1.0-SNAPSHOT</version>

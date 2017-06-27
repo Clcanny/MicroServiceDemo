@@ -1,8 +1,8 @@
 server:
-  port: 5678
+  port: 4444
 spring:
   application:
-    name: sidecar
+      name: sidecar-service
 
 eureka:
   client:

@@ -8,7 +8,8 @@ app.get('/health', (req, res) => {
     })
 })
 app.get('/number', function(request, response) {
-    response.send('{number: 1}')
+    // response.send('{number: 1}')
+    response.json( { number: 1 } )
 })
 app.get('/number2', function(request, response) {
     getNumber().then((x) => {

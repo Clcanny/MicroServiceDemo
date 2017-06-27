@@ -12,6 +12,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    ipAddress: 115.159.199.121
 
 ribbon:
   eureka:

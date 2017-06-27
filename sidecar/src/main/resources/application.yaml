@@ -11,4 +11,5 @@ eureka:
 
 sidecar:
   port: 8000
-  health-uri: http://http://115.159.199.121:8000/health
+  home-page-uri: http://115.159.199.121:8000/number
+  health-uri: http://115.159.199.121:8000/health

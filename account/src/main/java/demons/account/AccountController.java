@@ -9,6 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -17,13 +18,14 @@ import java.util.Map;
 /**
  * Created by demons on 2017/6/27.
  */
+@RestController
 public class AccountController {
 
     @Autowired
     AuthService authService;
 
-    @Autowired
-    private JavaMailSender mailSender;
+//    @Autowired
+//    private JavaMailSender mailSender;
 
     public static boolean isValidEmailAddress(String email) {
         boolean valid = true;

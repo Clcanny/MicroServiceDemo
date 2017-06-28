@@ -13,8 +13,9 @@ import java.util.Collection;
 // Interface UserDetails provides core user information.
 // Implementations are not used directly by Spring Security for security purposes.
 // They simply store user information which is later encapsulated into Authentication objects.
-// 不直接使用KeyUserInfo实现UserDetails的原因是：
-// KeyUserInfo不宜同时承担安全服务和用户信息存储两个职责
+
+// JwtUser是为用户权限验证服务的，调用者是Spring Security
+// KeyUserInfo用于存储用户账户，调用者是应用逻辑
 
 public class JwtUser implements UserDetails {
 
@@ -33,7 +34,7 @@ public class JwtUser implements UserDetails {
     @JsonIgnore
     @Override
     // 在安全服务中，username作为重要组成部分
-    // 但QAServer采用邮箱作为用户唯一标识
+    // 但account采用邮箱作为唯一标识
     public String getUsername() {
         return email;
     }

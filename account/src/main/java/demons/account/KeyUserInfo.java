@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "KeyUser")
+@Table(name = "KeyUserInfo")
 public class KeyUserInfo {
 
     @Id
@@ -17,6 +17,7 @@ public class KeyUserInfo {
     private Long id;
     private String email;
     private String password;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "ROLE")
     @MapKeyJoinColumn(name = "role_id")

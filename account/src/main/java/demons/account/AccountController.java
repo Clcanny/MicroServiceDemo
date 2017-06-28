@@ -5,13 +5,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import javax.sound.midi.SysexMessage;
 import java.util.Map;
 
 /**
@@ -34,9 +32,9 @@ public class AccountController {
         return valid;
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @PostMapping(value = "/register")
     public ResponseEntity<Map<String, Object>> register(
-            @RequestParam String email, @RequestParam String password) {
+            @RequestHeader String email, @RequestHeader String password) {
         if (!isValidEmailAddress(email)) {
             return new ResponseEntity<>(null, null, HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -48,14 +46,16 @@ public class AccountController {
         }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @GetMapping(value = "/login")
     public ResponseEntity<Map<String, Object>> login(
-            @RequestParam String email, @RequestParam String password) {
+            @RequestHeader String email, @RequestHeader String password) {
         if (!isValidEmailAddress(email)) {
             return new ResponseEntity<>(null, null, HttpStatus.UNPROCESSABLE_ENTITY);
         }
 
         String token = authService.login(email, password);
+        System.out.print(email);
+        System.out.print(password);
         if (token != null) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Authorization", token);
@@ -64,8 +64,8 @@ public class AccountController {
         return new ResponseEntity<>(null, null, HttpStatus.UNAUTHORIZED);
     }
 
-    @RequestMapping(value = "/refresh", method = RequestMethod.POST)
-    public ResponseEntity<?> refresh(@RequestParam String token) throws AuthenticationException {
+    @GetMapping(value = "/refresh")
+    public ResponseEntity<?> refresh(@RequestHeader String token) throws AuthenticationException {
         String refreshedToken = authService.refresh(token);
         if (refreshedToken != null) {
             HttpHeaders headers = new HttpHeaders();

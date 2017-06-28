@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: account-service
   jpa:
     database: MYSQL
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
 
   datasource:
     url: jdbc:mysql://115.159.199.121:3306/database
@@ -16,3 +18,20 @@ server:
     key-store: classpath:keystore.p12
     key-store-password: change
     key-password: change
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://115.159.199.121:1111/eureka/
+  instance:
+    preferIpAddress: true
+    ipAddress: 115.159.199.121
+
+# HTTP Server
+server:
+  port: 5555   # HTTP (Tomcat) port
+
+ribbon:
+  eureka:
+    enabled: true

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,9 +22,6 @@ public class AccountController {
 
     @Autowired
     AuthService authService;
-
-//    @Autowired
-//    private JavaMailSender mailSender;
 
     public static boolean isValidEmailAddress(String email) {
         boolean valid = true;

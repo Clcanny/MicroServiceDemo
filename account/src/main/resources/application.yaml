@@ -9,3 +9,10 @@ spring:
     username: username
     password: password
     driver-class-name: com.mysql.jdbc.Driver
+
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: change
+    key-password: change

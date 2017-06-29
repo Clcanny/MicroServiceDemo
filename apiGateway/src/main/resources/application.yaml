@@ -1,17 +1,24 @@
 # Spring properties
 spring:
   application:
-     name: complicated-client-service
+     name: api-gateway-service
 
 # Discovery Server Access
 eureka:
   client:
     serviceUrl:
       defaultZone: http://115.159.199.121:1111/eureka/
-  instance:
-    preferIpAddress: true
-    ipAddress: 115.159.199.121
+#  instance:
+#    preferIpAddress: true
+#    ipAddress: 115.159.199.121
 
 # HTTP Server
 server:
-  port: 80   # HTTP (Tomcat) port
+  port: 9000   # HTTP (Tomcat) port
+
+api:
+  gateway:
+    endpoints[0]:
+      location: http://simple-client-service
+      path: /number
+      method: GET

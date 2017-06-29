@@ -24,13 +24,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://115.159.199.121:1111/eureka/
-  instance:
-    preferIpAddress: true
-    ipAddress: 115.159.199.121
-
-# HTTP Server
-server:
-  port: 5555   # HTTP (Tomcat) port
+#  instance:
+#    preferIpAddress: true
+#    ipAddress: 115.159.199.121
 
 ribbon:
   eureka:

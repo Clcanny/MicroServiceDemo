@@ -34,9 +34,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // login route is only publicly available for POST requests
-                .antMatchers(HttpMethod.POST, "/register").permitAll()
-                .antMatchers(HttpMethod.GET, "/login").permitAll()
-                .antMatchers(HttpMethod.GET, "/refresh").permitAll()
+                .antMatchers(HttpMethod.POST, "/register").hasIpAddress("115.159.199.121")
+                .antMatchers(HttpMethod.GET, "/login").hasIpAddress("115.159.199.121")
+                .antMatchers(HttpMethod.GET, "/refresh").hasIpAddress("115.159.199.121")
                 .anyRequest().authenticated()
                 .and()
                 // And filter other requests to check the presence of JWT in header

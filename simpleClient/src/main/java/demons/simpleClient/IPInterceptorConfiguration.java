@@ -23,7 +23,7 @@ public class IPInterceptorConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/number")
-                .permitAll();
-        // .hasIpAddress("localhost");
+                // .permitAll();
+		.hasIpAddress("localhost");
     }
 }

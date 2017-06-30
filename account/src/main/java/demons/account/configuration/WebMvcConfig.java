@@ -1,4 +1,4 @@
-package demons.account;
+package demons.account.configuration;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;

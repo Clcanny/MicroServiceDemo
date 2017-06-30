@@ -1,4 +1,4 @@
-package demons.account;
+package demons.account.configuration;
 
 import demons.account.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Bean
     public JwtAuthenticationFilter authenticationFilterBean() throws Exception {
         return new JwtAuthenticationFilter();
@@ -34,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // login route is only publicly available for POST requests
-                // .antMatchers(HttpMethod.POST, "/register").hasIpAddress("115.159.199.121")
                 .antMatchers(HttpMethod.POST, "/register").permitAll()
                 .antMatchers(HttpMethod.GET, "/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/refresh").permitAll()

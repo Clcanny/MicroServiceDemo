@@ -4,8 +4,8 @@ package demons.account.jwt;
  * Created by demons on 2017/6/27.
  */
 
-import demons.account.KeyUserInfo;
-import demons.account.UserRepository;
+import demons.account.auth.KeyUserInfo;
+import demons.account.auth.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

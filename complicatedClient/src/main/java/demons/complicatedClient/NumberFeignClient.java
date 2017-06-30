@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "sidecar-service")
 public interface NumberFeignClient {
 
-//    @GetMapping("/number")
-    @RequestMapping(value = "/number", method = RequestMethod.GET)
-    public IntegerWrapper getNumber();
+   @GetMapping("/two")
+    public IntegerWrapper getTwo();
 }

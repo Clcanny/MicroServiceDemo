@@ -19,15 +19,15 @@ public class ComplicatedController {
     @Autowired
     protected NumberFeignClient numberFeignClient;
 
-    @GetMapping("/number1")
+    @GetMapping("/one")
     @ResponseBody
-    public IntegerWrapper getNumber1() {
-        return simpleClientService.getNumber();
+    public IntegerWrapper getOne() {
+        return simpleClientService.getOne();
     }
 
-    @GetMapping("/number2")
+    @GetMapping("/two")
     @ResponseBody
-    public IntegerWrapper getNumber2() {
-        return numberFeignClient.getNumber();
+    public IntegerWrapper getTwo() {
+        return numberFeignClient.getTwo();
     }
 }

@@ -22,7 +22,7 @@ public class SimpleClientService {
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://" + serviceUrl;
     }
 
-    public IntegerWrapper getNumber() {
-        return restTemplate.getForObject(serviceUrl + "/number", IntegerWrapper.class);
+    public IntegerWrapper getOne() {
+        return restTemplate.getForObject(serviceUrl + "/one", IntegerWrapper.class);
     }
 }

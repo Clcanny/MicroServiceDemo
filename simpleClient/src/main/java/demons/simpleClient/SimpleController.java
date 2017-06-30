@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class SimpleController {
 
-    @GetMapping("/number")
+    @GetMapping("/one")
     @ResponseBody
-    public IntegerWrapper getNumber() {
+    public IntegerWrapper getOne() {
         return new IntegerWrapper(1);
     }
 

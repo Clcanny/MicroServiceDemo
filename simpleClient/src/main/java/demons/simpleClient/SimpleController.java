@@ -16,6 +16,12 @@ public class SimpleController {
         return new IntegerWrapper(1);
     }
 
+    @GetMapping("/addParamsInPath/{x}/{y}")
+    @ResponseBody
+    public IntegerWrapper getAddParamsInPath(@PathVariable Integer x, @PathVariable Integer y) {
+        return new IntegerWrapper(x + y);
+    }
+
     @GetMapping("/addParamsInHeader")
     @ResponseBody
     public IntegerWrapper getAddParamsInHeader(@RequestHeader Integer x, @RequestHeader Integer y) {

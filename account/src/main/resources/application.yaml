@@ -23,7 +23,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://115.159.199.121:1111/eureka/
+      defaultZone: http://localhost:1111/eureka/
 #  instance:
 #    preferIpAddress: true
 #    ipAddress: 115.159.199.121

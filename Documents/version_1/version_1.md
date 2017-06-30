@@ -39,3 +39,5 @@
    同时需要依赖于`spring-cloud-starter-feign`主键去自动为接口生成bean
 
 3. 很多maven依赖的版本都是spring-cloud的版本决定的，所以不需要手动标注版本号，标注了反而可能出错
+
+commit: `8ee12e2853feb3237ff224a620769c5dc9f444e8`

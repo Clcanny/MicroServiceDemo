@@ -1,4 +1,4 @@
-package demons.account.jwt;
+package demons.apiGateway.jwt;
 
 /**
  * Created by demons on 2017/6/27.
@@ -34,7 +34,7 @@ public class JwtUser implements UserDetails {
     @JsonIgnore
     @Override
     // 在安全服务中，username作为重要组成部分
-    // 但account采用邮箱作为唯一标识
+    // 但apiGateway采用邮箱作为唯一标识
     public String getUsername() {
         return email;
     }

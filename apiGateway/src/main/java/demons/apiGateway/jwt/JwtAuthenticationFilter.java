@@ -1,4 +1,4 @@
-package demons.account.jwt;
+package demons.apiGateway.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

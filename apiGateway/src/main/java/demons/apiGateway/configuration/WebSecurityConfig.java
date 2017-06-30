@@ -1,6 +1,6 @@
-package demons.account.configuration;
+package demons.apiGateway.configuration;
 
-import demons.account.jwt.JwtAuthenticationFilter;
+import demons.apiGateway.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // Create a default account
+        // Create a default apiGateway
         auth.inMemoryAuthentication()
                 .withUser("admin")
                 .password("password")

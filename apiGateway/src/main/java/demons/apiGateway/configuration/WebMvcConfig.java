@@ -1,4 +1,4 @@
-package demons.account.configuration;
+package demons.apiGateway.configuration;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;

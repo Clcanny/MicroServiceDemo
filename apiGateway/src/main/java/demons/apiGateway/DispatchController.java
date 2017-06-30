@@ -15,14 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.Enumeration;
 
+/**
+ * Created by demons on 2017/6/30.
+ */
 @RestController
-public class GatewayController {
+public class DispatchController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    RestTemplate restTemplate;
 
-    public String getServiceUrl(String requestURI)
-            throws NoSuchApiException {
+    private String getServiceUrl(String requestURI) {
         return "http:/" + requestURI;
     }
 

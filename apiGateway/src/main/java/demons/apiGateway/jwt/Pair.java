@@ -1,4 +1,4 @@
-package demons.account.jwt;
+package demons.apiGateway.jwt;
 
 /**
  * Created by demons on 2017/6/27.

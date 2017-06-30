@@ -1,10 +1,10 @@
-package demons.account.jwt;
+package demons.apiGateway.jwt;
 
 /**
  * Created by demons on 2017/6/27.
  */
 
-import demons.account.auth.KeyUserInfo;
+import demons.apiGateway.auth.KeyUserInfo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

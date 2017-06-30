@@ -1,6 +1,6 @@
-package demons.account;
+package demons.apiGateway;
 
-import demons.account.auth.AuthService;
+import demons.apiGateway.auth.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

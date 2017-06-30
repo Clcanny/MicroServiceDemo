@@ -1,4 +1,4 @@
-package demons.account.auth;
+package demons.apiGateway.auth;
 
 /**
  * Created by demons on 2017/6/27.

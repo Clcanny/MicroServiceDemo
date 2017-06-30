@@ -1,11 +1,11 @@
-package demons.account.jwt;
+package demons.apiGateway.jwt;
 
 /**
  * Created by demons on 2017/6/27.
  */
 
-import demons.account.auth.KeyUserInfo;
-import demons.account.auth.UserRepository;
+import demons.apiGateway.auth.KeyUserInfo;
+import demons.apiGateway.auth.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

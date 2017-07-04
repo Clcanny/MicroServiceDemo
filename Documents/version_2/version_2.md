@@ -92,6 +92,6 @@ application.yaml
 commit: `f15eaeee6d916657a6252731f45813e219d41ca1`
 
 
-Update: 更新版本使用Zuul作为API网关，比手写的转发服务器更加简单易用
+Update: 更新版本使用Zuul作为API网关，比手写的转发服务器更加简单易用；API文档位于https://documenter.getpostman.com/view/2041481/microservice/6fVWRGj
 
-commit: `0606126ce875687a8fc9e472a99ccbeea504600c`
+commit: `700a1e260f0ff0a48b20fcd7c62d2430674f8d66`

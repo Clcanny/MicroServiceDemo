@@ -23,10 +23,9 @@ import java.util.List;
 public class ComplicatedClientApplication {
 
     public static final String simple_client_service_url = "http://SIMPLE-CLIENT-SERVICE";
+
     @Autowired
     LoggingRequestInterceptor ri;
-    @Value("${spring.application.name}")
-    private String name;
 
     public static void main(String[] args) {
         SpringApplication.run(ComplicatedClientApplication.class, args);

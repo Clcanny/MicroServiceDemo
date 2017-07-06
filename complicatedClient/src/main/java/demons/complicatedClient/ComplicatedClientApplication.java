@@ -1,5 +1,6 @@
 package demons.complicatedClient;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -26,7 +27,8 @@ import java.util.List;
 public class ComplicatedClientApplication {
 
     public static final String simple_client_service_url = "http://SIMPLE-CLIENT-SERVICE";
-
+    @Autowired
+    LoggingRequestInterceptor ri;
     @Value("${spring.application.name}")
     private String name;
 
@@ -40,7 +42,6 @@ public class ComplicatedClientApplication {
         RestTemplate rt = new RestTemplate();
 
         //set interceptors/requestFactory
-        ClientHttpRequestInterceptor ri = new LoggingRequestInterceptor(name);
         List<ClientHttpRequestInterceptor> ris = new ArrayList<ClientHttpRequestInterceptor>();
         ris.add(ri);
         rt.setInterceptors(ris);

@@ -54,6 +54,6 @@ public class LoggingRequestInterceptor implements ClientHttpRequestInterceptor {
         System.out.println(from);
         System.out.println(to);
 
-        restTemplate.getForObject("http://trace-callback-service/" + from + "/" + to, Object.class);
+        restTemplate.postForObject("http://trace-callback-service/" + from + "/" + to, null, Object.class);
     }
 }

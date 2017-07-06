@@ -32,8 +32,8 @@ public class ComplicatedClientApplication {
     }
 
     @LoadBalanced
-    @Bean
-    RestTemplate restTemplate() {
+    @Bean(name = "common")
+    RestTemplate commonRestTemplate() {
         RestTemplate rt = new RestTemplate();
 
         //set interceptors/requestFactory
@@ -42,6 +42,12 @@ public class ComplicatedClientApplication {
         rt.setInterceptors(ris);
         rt.setRequestFactory(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
         return rt;
+    }
+
+    @LoadBalanced
+    @Bean(name = "special")
+    RestTemplate specialRestTemplate() {
+        return new RestTemplate();
     }
 
     @Bean

@@ -17,13 +17,15 @@ import java.io.IOException;
 /**
  * Created by demons on 2017/7/6.
  */
-@Component
 public class LoggingRequestInterceptor implements ClientHttpRequestInterceptor {
 
     private Logger log = LoggerFactory.getLogger(LoggingRequestInterceptor.class);
 
-    @Value("${spring.application.name}")
     private String name;
+
+    public LoggingRequestInterceptor(String name) {
+        this.name = name;
+    }
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {

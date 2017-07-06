@@ -44,11 +44,7 @@ public class ComplicatedClientApplication {
         return rt;
     }
 
-    @LoadBalanced
-    @Bean(name = "special")
-    RestTemplate specialRestTemplate() {
-        return new RestTemplate();
-    }
+
 
     @Bean
     public SimpleClientService simpleClientService() {

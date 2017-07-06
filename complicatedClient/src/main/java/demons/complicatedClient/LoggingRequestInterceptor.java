@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -22,6 +24,12 @@ import java.io.IOException;
 public class LoggingRequestInterceptor implements ClientHttpRequestInterceptor {
 
     private Logger log = LoggerFactory.getLogger(LoggingRequestInterceptor.class);
+
+    @LoadBalanced
+    @Bean(name = "special")
+    RestTemplate specialRestTemplate() {
+        return new RestTemplate();
+    }
 
     @Autowired
     @Qualifier("special")

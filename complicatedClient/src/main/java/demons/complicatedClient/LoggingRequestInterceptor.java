@@ -23,20 +23,18 @@ import java.io.IOException;
 @Component
 public class LoggingRequestInterceptor implements ClientHttpRequestInterceptor {
 
+    @Autowired
+    @Qualifier("special")
+    RestTemplate restTemplate;
     private Logger log = LoggerFactory.getLogger(LoggingRequestInterceptor.class);
+    @Value("${spring.application.name}")
+    private String name;
 
     @LoadBalanced
     @Bean(name = "special")
     RestTemplate specialRestTemplate() {
         return new RestTemplate();
     }
-
-    @Autowired
-    @Qualifier("special")
-    RestTemplate restTemplate;
-
-    @Value("${spring.application.name}")
-    private String name;
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {

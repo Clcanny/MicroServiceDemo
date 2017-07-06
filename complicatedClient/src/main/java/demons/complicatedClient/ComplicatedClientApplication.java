@@ -1,20 +1,13 @@
 package demons.complicatedClient;
 
+import demons.communicationClass.RestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.client.BufferingClientHttpRequestFactory;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -32,19 +25,10 @@ public class ComplicatedClientApplication {
     }
 
     @LoadBalanced
-    @Bean(name = "common")
-    RestTemplate commonRestTemplate() {
-        RestTemplate rt = new RestTemplate();
-
-        //set interceptors/requestFactory
-        List<ClientHttpRequestInterceptor> ris = new ArrayList<ClientHttpRequestInterceptor>();
-        ris.add(ri);
-        rt.setInterceptors(ris);
-        rt.setRequestFactory(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
-        return rt;
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
     }
-
-
 
     @Bean
     public SimpleClientService simpleClientService() {

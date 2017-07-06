@@ -1,11 +1,10 @@
 package demons.complicatedClient;
 
 import demons.communicationClass.IntegerWrapper;
+import demons.communicationClass.RestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by demons on 2017/6/26.
@@ -14,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 public class SimpleClientService {
 
     @Autowired
-    @Qualifier("common")
     @LoadBalanced
     protected RestTemplate restTemplate;
 

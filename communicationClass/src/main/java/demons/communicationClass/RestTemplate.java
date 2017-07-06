@@ -18,9 +18,9 @@ import java.net.URI;
  */
 public class RestTemplate extends org.springframework.web.client.RestTemplate {
 
-//    @Autowired
-//    @Qualifier("internal-use-for-trace-callback")
-//    RestTemplate restTemplate;
+    @Autowired
+    @LoadBalanced
+    org.springframework.web.client.RestTemplate restTemplate;
 
     @Value("${spring.application.name}")
     private String name;
@@ -29,11 +29,11 @@ public class RestTemplate extends org.springframework.web.client.RestTemplate {
         super();
     }
 
-//    @LoadBalanced
-//    @Bean(name = "internal-use-for-trace-callback")
-//    org.springframework.web.client.RestTemplate restTemplate() {
-//        return new org.springframework.web.client.RestTemplate();
-//    }
+    @LoadBalanced
+    @Bean
+    org.springframework.web.client.RestTemplate restTemplate() {
+        return new org.springframework.web.client.RestTemplate();
+    }
 
     @Override
     @Nullable
@@ -51,7 +51,7 @@ public class RestTemplate extends org.springframework.web.client.RestTemplate {
         System.out.println(from);
         System.out.println(to);
 
-//        restTemplate.postForObject("http://trace-callback-service/" + from + "/" + to, null, Object.class);
+        restTemplate.postForObject("http://trace-callback-service/" + from + "/" + to, null, Object.class);
 
         return super.doExecute(url, method, requestCallback, responseExtractor);
     }

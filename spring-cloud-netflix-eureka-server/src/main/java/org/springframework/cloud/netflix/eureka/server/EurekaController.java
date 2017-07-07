@@ -38,7 +38,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
-
 import java.util.*;
 
 /**
@@ -248,7 +247,7 @@ public class EurekaController {
                     boolean isHref = url != null && url.startsWith("http");
                     instance.put("isHref", isHref);
                     /*
-					 * String id = p.first(); String url = p.second(); if(url != null &&
+                     * String id = p.first(); String url = p.second(); if(url != null &&
 					 * url.startsWith("http")){
 					 * buf.append("<a href=\"").append(url).append("\">"); }else { url =
 					 * null; } buf.append(id); if(url != null){ buf.append("</a>"); }

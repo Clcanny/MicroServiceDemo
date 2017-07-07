@@ -16,12 +16,6 @@
 
 package org.springframework.cloud.netflix.eureka.server;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Collections;
-import java.util.Map;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,84 +26,85 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.cloud.netflix.eureka.server.ApplicationContextTests.Application;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.Collections;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class, webEnvironment = WebEnvironment.RANDOM_PORT, value = {
-		"spring.application.name=eureka", "server.contextPath=/context",
-		"management.security.enabled=false" })
+        "spring.application.name=eureka", "server.contextPath=/context",
+        "management.security.enabled=false"})
 public class ApplicationContextTests {
 
-	@Value("${local.server.port}")
-	private int port = 0;
+    @Value("${local.server.port}")
+    private int port = 0;
 
-	@Test
-	public void catalogLoads() {
-		@SuppressWarnings("rawtypes")
-		ResponseEntity<Map> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + this.port + "/context/eureka/apps", Map.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-	}
+    @Test
+    public void catalogLoads() {
+        @SuppressWarnings("rawtypes")
+        ResponseEntity<Map> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + this.port + "/context/eureka/apps", Map.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+    }
 
-	@Test
-	public void dashboardLoads() {
-		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + this.port + "/context/", String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-		String body = entity.getBody();
-		// System.err.println(body);
-		assertTrue(body.contains("eureka/js"));
-		assertTrue(body.contains("eureka/css"));
-		// The "DS Replicas"
-		assertTrue(
-				body.contains("<a href=\"http://localhost:8761/eureka/\">localhost</a>"));
-	}
+    @Test
+    public void dashboardLoads() {
+        ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + this.port + "/context/", String.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+        String body = entity.getBody();
+        // System.err.println(body);
+        assertTrue(body.contains("eureka/js"));
+        assertTrue(body.contains("eureka/css"));
+        // The "DS Replicas"
+        assertTrue(
+                body.contains("<a href=\"http://localhost:8761/eureka/\">localhost</a>"));
+    }
 
-	@Test
-	public void cssAvailable() {
-		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + this.port + "/context/eureka/css/wro.css",
-				String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-	}
+    @Test
+    public void cssAvailable() {
+        ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + this.port + "/context/eureka/css/wro.css",
+                String.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+    }
 
-	@Test
-	public void jsAvailable() {
-		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
-				"http://localhost:" + this.port + "/context/eureka/js/wro.js",
-				String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-	}
+    @Test
+    public void jsAvailable() {
+        ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
+                "http://localhost:" + this.port + "/context/eureka/js/wro.js",
+                String.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+    }
 
-	@Test
-	public void adminLoads() {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+    @Test
+    public void adminLoads() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 
-		@SuppressWarnings("rawtypes")
-		ResponseEntity<Map> entity = new TestRestTemplate().exchange(
-				"http://localhost:" + this.port + "/context/env", HttpMethod.GET,
-				new HttpEntity<>("parameters", headers), Map.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-	}
+        @SuppressWarnings("rawtypes")
+        ResponseEntity<Map> entity = new TestRestTemplate().exchange(
+                "http://localhost:" + this.port + "/context/env", HttpMethod.GET,
+                new HttpEntity<>("parameters", headers), Map.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+    }
 
-	@Configuration
-	@EnableAutoConfiguration
-	@EnableEurekaServer
-	protected static class Application {
+    @Configuration
+    @EnableAutoConfiguration
+    @EnableEurekaServer
+    protected static class Application {
 
-		public static void main(String[] args) {
-			new SpringApplicationBuilder(Application.class)
-					.properties("spring.application.name=eureka",
-							"server.contextPath=/context")
-					.run(args);
-		}
+        public static void main(String[] args) {
+            new SpringApplicationBuilder(Application.class)
+                    .properties("spring.application.name=eureka",
+                            "server.contextPath=/context")
+                    .run(args);
+        }
 
-	}
+    }
 }

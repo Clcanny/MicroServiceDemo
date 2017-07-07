@@ -24,6 +24,6 @@ public class IPInterceptorConfiguration extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/number")
                 // .permitAll();
-		.hasIpAddress("localhost");
+                .hasIpAddress("localhost");
     }
 }

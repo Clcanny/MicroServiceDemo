@@ -1,2 +1,2 @@
 #/bin/sh
-docker build -t . springcloud
+docker build -t springcloud .

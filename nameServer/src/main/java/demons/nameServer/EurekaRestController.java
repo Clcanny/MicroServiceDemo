@@ -17,11 +17,11 @@ public class EurekaRestController {
 
     @GetMapping("/apps")
     public @ResponseBody
-    List<Object> apps() {
+    List<Map<String, Object>> apps() {
         PeerAwareInstanceRegistry registry = EurekaServerContextHolder.getInstance().getServerContext().getRegistry();
         Applications applications = registry.getApplications();
 
-        List<Object> apps = new ArrayList<>();
+        List<Map<String, Object>> apps = new ArrayList<>();
         applications.getRegisteredApplications().forEach((registeredApplication) -> {
             Map<String, Object> map = new HashMap<>();
             List<Object> list = new ArrayList<>();
@@ -51,5 +51,11 @@ public class EurekaRestController {
         List<String> ips = new ArrayList<>();
         ips.addAll(set);
         return ips;
+    }
+
+    @GetMapping("/hello")
+    public @ResponseBody
+    String hello() {
+        return "Hello!";
     }
 }

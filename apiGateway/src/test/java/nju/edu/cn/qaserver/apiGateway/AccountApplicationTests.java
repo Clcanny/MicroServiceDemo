@@ -1,4 +1,4 @@
-package demons.apiGateway;
+package nju.edu.cn.qaserver.apiGateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

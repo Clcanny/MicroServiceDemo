@@ -1,7 +1,7 @@
-package demons.apiGateway.jwt;
+package nju.edu.cn.qaserver.apiGateway.jwt;
 
 /**
- * Created by demons on 2017/6/27.
+ * Created by nju.edu.cn.qaserver on 2017/6/27.
  */
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

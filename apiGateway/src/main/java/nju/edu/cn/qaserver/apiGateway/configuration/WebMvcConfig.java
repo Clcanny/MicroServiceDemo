@@ -1,4 +1,4 @@
-package demons.apiGateway.configuration;
+package nju.edu.cn.qaserver.apiGateway.configuration;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * Created by demons on 2017/6/28.
+ * Created by nju.edu.cn.qaserver on 2017/6/28.
  */
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {

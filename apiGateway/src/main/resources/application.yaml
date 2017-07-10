@@ -12,14 +12,6 @@ spring:
     password: campusqa
     driver-class-name: com.mysql.jdbc.Driver
 
-# Disable Hystrix timeout globally (for all services)
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false
-
 server:
   port: 8443
   ssl:
@@ -33,7 +25,7 @@ eureka:
     registerWithEureka: false
     # fetchRegistry: false
     serviceUrl:
-      defaultZone: http://loclahost:1111/eureka/
+      defaultZone: http://localhost:1111/eureka/
   instance:
     hostname: localhost
 

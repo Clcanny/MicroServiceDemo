@@ -1,10 +1,10 @@
-package demons.apiGateway.auth;
+package nju.edu.cn.qaserver.apiGateway.auth;
 
 /**
- * Created by demons on 2017/6/27.
+ * Created by nju.edu.cn.qaserver on 2017/6/27.
  */
 
-import demons.apiGateway.jwt.JwtTokenUtil;
+import nju.edu.cn.qaserver.apiGateway.jwt.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

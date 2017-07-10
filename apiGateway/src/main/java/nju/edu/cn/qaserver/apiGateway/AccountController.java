@@ -1,6 +1,6 @@
-package demons.apiGateway;
+package nju.edu.cn.qaserver.apiGateway;
 
-import demons.apiGateway.auth.AuthService;
+import nju.edu.cn.qaserver.apiGateway.auth.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import javax.mail.internet.InternetAddress;
 import java.util.Map;
 
 /**
- * Created by demons on 2017/6/27.
+ * Created by nju.edu.cn.qaserver on 2017/6/27.
  */
 @RestController
 public class AccountController {

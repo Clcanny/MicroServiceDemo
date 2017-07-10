@@ -1,11 +1,11 @@
-package demons.apiGateway.jwt;
+package nju.edu.cn.qaserver.apiGateway.jwt;
 
 /**
- * Created by demons on 2017/6/27.
+ * Created by nju.edu.cn.qaserver on 2017/6/27.
  */
 
-import demons.apiGateway.auth.KeyUserInfo;
-import demons.apiGateway.auth.UserRepository;
+import nju.edu.cn.qaserver.apiGateway.auth.KeyUserInfo;
+import nju.edu.cn.qaserver.apiGateway.auth.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

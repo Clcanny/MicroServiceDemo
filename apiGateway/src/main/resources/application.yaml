@@ -4,12 +4,12 @@ spring:
   jpa:
     database: MYSQL
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
   datasource:
-    url: jdbc:mysql://115.159.199.121:3306/database
-    username: username
-    password: password
+    url: jdbc:mysql://115.159.0.12:3306/campusqa?characterEncoding=utf-8
+    username: campusqa
+    password: campusqa
     driver-class-name: com.mysql.jdbc.Driver
 
 # Disable Hystrix timeout globally (for all services)
@@ -33,7 +33,7 @@ eureka:
     registerWithEureka: false
     # fetchRegistry: false
     serviceUrl:
-      defaultZone: http://115.159.199.121:1111/eureka/
+      defaultZone: http://loclahost:1111/eureka/
   instance:
     hostname: localhost
 

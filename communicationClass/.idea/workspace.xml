@@ -23,17 +23,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="140" column="40" lean-forward="true" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
+            <state relative-caret-position="2100">
+              <caret line="140" column="40" lean-forward="false" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EurekaServerAutoConfiguration.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EurekaServerAutoConfiguration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="900">
@@ -705,7 +705,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9906000" />
+    <option name="totallyTimeSpent" value="10719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1085,21 +1085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <marker date="1499693016000" expanded="false" signature="4748:4759" ph=" { " />
-            <marker date="1499693016000" expanded="false" signature="4816:4822" ph=" }" />
-            <marker date="1499693016000" expanded="false" signature="4872:4883" ph=" { " />
-            <marker date="1499693016000" expanded="false" signature="4937:4943" ph=" }" />
-            <marker date="1499693016000" expanded="false" signature="7872:7882" ph="&lt;~&gt;" />
-            <marker date="1499693016000" expanded="false" signature="8387:8403" ph="&lt;~&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EnableEurekaServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1120,9 +1105,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="140" column="40" lean-forward="true" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
+        <state relative-caret-position="2100">
+          <caret line="140" column="40" lean-forward="false" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <marker date="1499693016000" expanded="false" signature="4748:4759" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="4816:4822" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="4872:4883" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="4937:4943" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="7872:7882" ph="&lt;~&gt;" />
+            <marker date="1499693016000" expanded="false" signature="8387:8403" ph="&lt;~&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>

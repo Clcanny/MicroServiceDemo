@@ -23,21 +23,38 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-972">
-              <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="408">
+              <caret line="140" column="40" lean-forward="true" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EurekaController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EurekaServerAutoConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <folding>
+                <marker date="1499693016000" expanded="false" signature="4748:4759" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="4816:4822" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="4872:4883" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="4937:4943" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="7872:7882" ph="&lt;~&gt;" />
+                <marker date="1499693016000" expanded="false" signature="8387:8403" ph="&lt;~&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EurekaController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4125">
-              <caret line="293" column="56" lean-forward="false" selection-start-line="293" selection-start-column="56" selection-end-line="293" selection-end-column="56" />
+            <state relative-caret-position="1279">
+              <caret line="282" column="42" lean-forward="false" selection-start-line="282" selection-start-column="42" selection-end-line="282" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,25 +65,111 @@
       <file leaf-file-name="EnableEurekaServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EnableEurekaServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+            <state relative-caret-position="270">
+              <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EurekaServerAutoConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java">
+      <file leaf-file-name="EurekaServerConfigBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerConfigBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+            <state relative-caret-position="135">
+              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
-                <element signature="e#0#10046#0" expanded="false" />
-                <element signature="e#4749#4750#0" expanded="false" />
-                <element signature="e#4821#4822#0" expanded="false" />
-                <element signature="e#4873#4874#0" expanded="false" />
-                <element signature="e#4942#4943#0" expanded="false" />
+                <marker date="1499693016000" expanded="true" signature="1136:1164" ph="/**...*/" />
+                <marker date="1499693016000" expanded="true" signature="1165:1226" ph="@{...}" />
+                <marker date="1499693016000" expanded="false" signature="5593:5604" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="5639:5645" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="5700:5711" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="5736:5742" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="5809:5820" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="5857:5863" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="5932:5943" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="5982:5988" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="6059:6070" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="6111:6117" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="6187:6198" ph=" { " />
+                <marker date="1499693016000" expanded="true" signature="6330:6469" ph="{...}" />
+                <marker date="1499693016000" expanded="false" signature="6545:6556" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="6608:6614" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="6673:6684" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="6713:6719" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="6780:6791" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="6822:6828" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="6880:6891" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="6917:6923" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="6974:6985" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="7010:7016" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="7083:7094" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="7131:7137" ph=" }" />
+                <marker date="1499693016000" expanded="false" signature="7214:7225" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="7272:7278" ph=" }" />
+                <marker date="1499693016000" expanded="true" signature="7341:7552" ph="{...}" />
+                <marker date="1499693016000" expanded="false" signature="7625:7636" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="7688:7694" ph=" }" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EurekaServerBootstrap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerBootstrap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+              <folding>
+                <marker date="1499693016000" expanded="true" signature="1525:1556" ph="/**...*/" />
+                <marker date="1499693016000" expanded="true" signature="1557:1568" ph="@{...}" />
+                <marker date="1499693016000" expanded="true" signature="2679:2934" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="2995:3367" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="3426:3813" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="3875:5058" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="5122:6101" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="6107:6181" ph="/**...*/" />
+                <marker date="1499693016000" expanded="true" signature="6247:6471" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="6477:6554" ph="/**...*/" />
+                <marker date="1499693016000" expanded="true" signature="6618:6625" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="6686:6882" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstanceRegistry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/InstanceRegistry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+              <folding>
+                <marker date="1499693016000" expanded="true" signature="1594:1625" ph="/**...*/" />
+                <marker date="1499693016000" expanded="true" signature="2132:2355" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="2459:2495" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="2501:2977" ph="/**...*/" />
+                <marker date="1499693016000" expanded="true" signature="3081:3212" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="3314:3445" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="3540:3677" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="3775:3906" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="4040:4852" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="4955:5082" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="5169:5357" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="5492:5800" ph="{...}" />
+                <marker date="1499693016000" expanded="true" signature="5839:5924" ph="{...}" />
+                <marker date="1499693016000" expanded="false" signature="5990:6001" ph=" { " />
+                <marker date="1499693016000" expanded="false" signature="6042:6048" ph=" }" />
+                <marker date="1499693016000" expanded="true" signature="6120:6386" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EurekaServerInitializerConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerInitializerConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/InstanceRegistryProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EnableEurekaServer.java" />
       </list>
     </option>
   </component>
@@ -139,8 +243,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -212,6 +314,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -601,10 +705,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8726000" />
+    <option name="totallyTimeSpent" value="9906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -617,7 +722,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34006462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -626,11 +731,30 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34006462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -862,21 +986,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/InstanceRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1347">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1499693016000" expanded="true" signature="1594:1625" ph="/**...*/" />
+            <marker date="1499693016000" expanded="true" signature="2132:2355" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="2459:2495" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="2501:2977" ph="/**...*/" />
+            <marker date="1499693016000" expanded="true" signature="3081:3212" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="3314:3445" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="3540:3677" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="3775:3906" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="4040:4852" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="4955:5082" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="5169:5357" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="5492:5800" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="5839:5924" ph="{...}" />
+            <marker date="1499693016000" expanded="false" signature="5990:6001" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="6042:6048" ph=" }" />
+            <marker date="1499693016000" expanded="true" signature="6120:6386" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerInitializerConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -889,55 +1026,103 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerConfigBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <marker date="1499693016000" expanded="true" signature="1136:1164" ph="/**...*/" />
+            <marker date="1499693016000" expanded="true" signature="1165:1226" ph="@{...}" />
+            <marker date="1499693016000" expanded="false" signature="5593:5604" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="5639:5645" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="5700:5711" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="5736:5742" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="5809:5820" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="5857:5863" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="5932:5943" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="5982:5988" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="6059:6070" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="6111:6117" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="6187:6198" ph=" { " />
+            <marker date="1499693016000" expanded="true" signature="6330:6469" ph="{...}" />
+            <marker date="1499693016000" expanded="false" signature="6545:6556" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="6608:6614" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="6673:6684" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="6713:6719" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="6780:6791" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="6822:6828" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="6880:6891" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="6917:6923" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="6974:6985" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="7010:7016" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="7083:7094" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="7131:7137" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="7214:7225" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="7272:7278" ph=" }" />
+            <marker date="1499693016000" expanded="true" signature="7341:7552" ph="{...}" />
+            <marker date="1499693016000" expanded="false" signature="7625:7636" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="7688:7694" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerBootstrap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding>
+            <marker date="1499693016000" expanded="true" signature="1525:1556" ph="/**...*/" />
+            <marker date="1499693016000" expanded="true" signature="1557:1568" ph="@{...}" />
+            <marker date="1499693016000" expanded="true" signature="2679:2934" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="2995:3367" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="3426:3813" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="3875:5058" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="5122:6101" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="6107:6181" ph="/**...*/" />
+            <marker date="1499693016000" expanded="true" signature="6247:6471" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="6477:6554" ph="/**...*/" />
+            <marker date="1499693016000" expanded="true" signature="6618:6625" ph="{...}" />
+            <marker date="1499693016000" expanded="true" signature="6686:6882" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaServerAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+        <state relative-caret-position="900">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10046#0" expanded="false" />
-            <element signature="e#4749#4750#0" expanded="false" />
-            <element signature="e#4821#4822#0" expanded="false" />
-            <element signature="e#4873#4874#0" expanded="false" />
-            <element signature="e#4942#4943#0" expanded="false" />
+            <marker date="1499693016000" expanded="false" signature="4748:4759" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="4816:4822" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="4872:4883" ph=" { " />
+            <marker date="1499693016000" expanded="false" signature="4937:4943" ph=" }" />
+            <marker date="1499693016000" expanded="false" signature="7872:7882" ph="&lt;~&gt;" />
+            <marker date="1499693016000" expanded="false" signature="8387:8403" ph="&lt;~&gt;" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972">
-          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EnableEurekaServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        <state relative-caret-position="270">
+          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demons/eureka/server/plugin/EurekaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4125">
-          <caret line="293" column="56" lean-forward="false" selection-start-line="293" selection-start-column="56" selection-end-line="293" selection-end-column="56" />
+        <state relative-caret-position="1279">
+          <caret line="282" column="42" lean-forward="false" selection-start-line="282" selection-start-column="42" selection-end-line="282" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="140" column="40" lean-forward="true" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

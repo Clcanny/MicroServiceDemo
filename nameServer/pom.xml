@@ -71,16 +71,16 @@
         <!--     <groupId>org.springframework.cloud</groupId> -->
         <!--     <artifactId>spring-cloud-starter-eureka-server</artifactId> -->
         <!-- </dependency> -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
-            <version>1.4.0.BUILD-SNAPSHOT</version>
-        </dependency>
         <!--<dependency>-->
-            <!--<groupId>demons</groupId>-->
-            <!--<artifactId>communicationClass</artifactId>-->
-            <!--<version>1.0-SNAPSHOT</version>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-netflix-eureka-server</artifactId>-->
+            <!--<version>1.4.0.BUILD-SNAPSHOT</version>-->
         <!--</dependency>-->
+        <dependency>
+            <groupId>demons</groupId>
+            <artifactId>communicationClass</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

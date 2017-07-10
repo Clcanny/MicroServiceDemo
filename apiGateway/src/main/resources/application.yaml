@@ -12,6 +12,14 @@ spring:
     password: password
     driver-class-name: com.mysql.jdbc.Driver
 
+# Disable Hystrix timeout globally (for all services)
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
 server:
   port: 8443
   ssl:

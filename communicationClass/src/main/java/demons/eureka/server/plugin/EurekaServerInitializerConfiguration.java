@@ -17,10 +17,10 @@
 package demons.eureka.server.plugin;
 
 import com.netflix.eureka.EurekaServerConfig;
-import lombok.extern.apachecommons.CommonsLog;
-import org.springframework.beans.factory.annotation.Autowired;
 import demons.eureka.server.plugin.event.EurekaRegistryAvailableEvent;
 import demons.eureka.server.plugin.event.EurekaServerStartedEvent;
+import lombok.extern.apachecommons.CommonsLog;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.SmartLifecycle;

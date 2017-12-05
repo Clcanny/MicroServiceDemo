@@ -4,7 +4,7 @@ spring:
     enabled: true
     sampler: 1
   zipkin:
-    base-url: http://115.159.199.121:9411
+      base-url: http://115.159.199.121:9411
   application:
      name: complicated-client-service
 

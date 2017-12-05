@@ -1,0 +1,2 @@
+发生一个很诡异的情况，从nameserver去ping/curl任何一个其它微服务都可以
+从微服务A能够ping通微服务B，从微服务A不能curl微服务B

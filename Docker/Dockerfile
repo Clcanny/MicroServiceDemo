@@ -7,6 +7,7 @@ ADD settings.xml /usr/share/maven/conf/settings.xml
 ADD sources.list /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y git
+RUN apt-get install -y dnsutils
 
 RUN cd /home && git clone https://github.com/Clcanny/MicroServiceDemo.git
 

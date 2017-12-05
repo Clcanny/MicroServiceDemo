@@ -1,2 +1,3 @@
 发生一个很诡异的情况，从nameserver去ping/curl任何一个其它微服务都可以
 从微服务A能够ping通微服务B，从微服务A不能curl微服务B
+docker exec 6b25 sh -c "curl -X POST http://10.0.0.7:6789/complicated-client-service/simple-client-service%2520one"

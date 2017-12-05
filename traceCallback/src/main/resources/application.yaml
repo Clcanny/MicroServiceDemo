@@ -13,6 +13,6 @@ eureka:
 server:
   port: 6789   # HTTP (Tomcat) port
 
-ribbon:
-  eureka:
-    enabled: true
+# ribbon:
+#   eureka:
+#     enabled: true

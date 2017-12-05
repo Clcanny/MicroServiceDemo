@@ -129,7 +129,7 @@ services:
             - "git pull && mvn spring-boot:run"
 
         ports:
-            - 2222:2222
+            - 3333:3333
 
         healthcheck:
             test: ["CMD-SHELL", "curl --fail http://localhost:3333/one"]

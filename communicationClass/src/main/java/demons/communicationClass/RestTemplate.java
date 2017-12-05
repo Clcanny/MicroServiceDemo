@@ -50,7 +50,11 @@ public class RestTemplate extends org.springframework.web.client.RestTemplate {
         System.out.println(from);
         System.out.println(to);
 
-        restTemplate.postForObject("http://trace-callback-service/" + from + "/" + to, null, Object.class);
+        try {
+            restTemplate.postForObject("http://trace-callback-service/" + from + "/" + to, null, Object.class);
+        }
+        catch (Exception exception) {
+        }
 
         return super.doExecute(url, method, requestCallback, responseExtractor);
     }

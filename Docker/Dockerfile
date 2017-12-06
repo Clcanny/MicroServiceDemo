@@ -25,3 +25,6 @@ RUN cd apiGateway && mvn dependency:go-offline && mvn dependency:resolve-plugins
 RUN cd simpleClient && mvn dependency:go-offline && mvn dependency:resolve-plugins
 RUN cd complicatedClient && mvn dependency:go-offline && mvn dependency:resolve-plugins
 RUN cd sidecar && mvn dependency:go-offline && mvn dependency:resolve-plugins
+
+RUN curl -sL https://deb.nodesource.com/setup_9.x | -E bash -
+RUN apt-get install nodejs

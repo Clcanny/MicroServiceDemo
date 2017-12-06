@@ -19,7 +19,6 @@ eureka:
   # instance:
   #   hostname: complicatedclient
   #   preferIpAddress: false
-#    ipAddress: 115.159.199.121
 
 # HTTP Server
 server:

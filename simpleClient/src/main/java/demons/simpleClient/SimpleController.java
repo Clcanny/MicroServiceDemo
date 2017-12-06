@@ -1,13 +1,12 @@
 package demons.simpleClient;
 
 import demons.communicationClass.IntegerWrapper;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by demons on 2017/6/26.
  */
-@Controller
+@RestController
 public class SimpleController {
 
     @GetMapping("/one")

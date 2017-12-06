@@ -86,7 +86,7 @@ services:
         ports:
             - 8443:8443
         healthcheck:
-            test: ["CMD-SHELL", "curl --fail https://localhost:8443/info"]
+            test: ["CMD-SHELL", "curl --fail -k https://localhost:8443/info"]
             interval: 2s
             timeout: 2s
             retries: 3

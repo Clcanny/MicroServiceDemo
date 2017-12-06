@@ -7,9 +7,9 @@ spring:
       ddl-auto: update
 
   datasource:
-    url: jdbc:mysql://115.159.0.12:3306/campusqa?characterEncoding=utf-8
-    username: campusqa
-    password: campusqa
+    url: jdbc:mysql://mysqlusers:3306/userstable?characterEncoding=utf-8
+    username: microservicedemo
+    password: microservicedemo
     driver-class-name: com.mysql.jdbc.Driver
 
 server:

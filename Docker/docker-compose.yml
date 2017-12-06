@@ -11,7 +11,7 @@ services:
             - "git pull && mvn spring-boot:run"
 
         networks:
-            - microservicedemo_backend_network
+            - backend_network
         ports:
             - 1111:1111
 
@@ -71,7 +71,7 @@ services:
             - -c
             - "git pull && mvn spring-boot:run"
         networks:
-            - microservicedemo_backend_network
+            - backend_network
         ports:
             - 6789:6789
         healthcheck:
@@ -96,7 +96,7 @@ services:
             - -c
             - "git pull && mvn spring-boot:run"
         networks:
-            - microservicedemo_backend_network
+            - backend_network
         ports:
             - 2222:2222
         healthcheck:
@@ -121,7 +121,7 @@ services:
             - -c
             - "git pull && mvn spring-boot:run"
         networks:
-            - microservicedemo_backend_network
+            - backend_network
         ports:
             - 3333:3333
         healthcheck:
@@ -138,5 +138,5 @@ services:
             endpoint_mode: vip
 
 networks:
-    microservicedemo_backend_network:
+    backend_network:
         driver: overlay

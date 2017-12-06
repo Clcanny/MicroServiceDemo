@@ -1,18 +1,22 @@
-server:
-  port: 4444
 spring:
   application:
       name: sidecar-service
+  cloud:
+    inetutils:
+      preferredNetworks: microservicedemo_backend_network
 
 eureka:
   client:
     serviceUrl:
-        defaultZone: http://115.159.199.121:1111/eureka/
-  instance:
-    preferIpAddress: true
-    ipAddress: 115.159.199.121
+        defaultZone: http://nameserver:1111/eureka/
+  # instance:
+  #   hostname: sidecar
+  #   preferIpAddress: false
 
 sidecar:
   port: 8000
-  home-page-uri: http://115.159.199.121:8000/number
-  health-uri: http://115.159.199.121:8000/health
+  home-page-uri: http://localhost:8000/number
+  health-uri: http://localhost:8000/health
+
+server:
+  port: 4444

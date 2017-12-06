@@ -26,5 +26,13 @@ RUN cd simpleClient && mvn dependency:go-offline && mvn dependency:resolve-plugi
 RUN cd complicatedClient && mvn dependency:go-offline && mvn dependency:resolve-plugins
 RUN cd sidecar && mvn dependency:go-offline && mvn dependency:resolve-plugins
 
-RUN curl -sL https://deb.nodesource.com/setup_9.x | -E bash -
-RUN apt-get install nodejs
+WORKDIR /home/MicroServiceDemo
+RUN apt-get install -y apt-transport-https
+RUN curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+RUN echo "deb https://deb.nodesource.com/node_8.x jessie main" >> /etc/apt/sources.list
+RUN echo "deb-src https://deb.nodesource.com/node_8.x jessie main" >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y nodejs
+RUN node -v
+RUN npm -v
+RUN npm install --save express isomorphic-fetch es6-promise

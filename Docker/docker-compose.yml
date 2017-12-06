@@ -129,5 +129,6 @@ services:
             replicas: 1
             endpoint_mode: vip
 
-# networks:
-#     overlay
+networks:
+    default:
+        driver: microservicedemo_backend_network

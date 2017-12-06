@@ -7,15 +7,18 @@ spring:
       base-url: http://115.159.199.121:9411
   application:
      name: complicated-client-service
+  cloud:
+    inetutils:
+      preferredNetworks: microservicedemo_backend_network
 
 # Discovery Server Access
 eureka:
   client:
     serviceUrl:
       defaultZone: http://nameserver:1111/eureka/
-  instance:
-    hostname: complicatedclient
-    preferIpAddress: false
+  # instance:
+  #   hostname: complicatedclient
+  #   preferIpAddress: false
 #    ipAddress: 115.159.199.121
 
 # HTTP Server

@@ -1,16 +1,19 @@
 # Spring properties
 spring:
   application:
-     name: simple-client-service
+    name: simple-client-service
+  cloud:
+    inetutils:
+      preferredNetworks: microservicedemo_backend_network
 
 # Discovery Server Access
 eureka:
   client:
     serviceUrl:
       defaultZone: http://nameserver:1111/eureka/
-  instance:
-    hostname: simpleclient
-    preferIpAddress: false
+  # instance:
+  #   hostname: simpleclient
+  #   preferIpAddress: false
 
 # HTTP Server
 server:

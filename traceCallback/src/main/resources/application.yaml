@@ -2,15 +2,18 @@
 spring:
   application:
      name: trace-callback-service
+  cloud:
+    inetutils:
+      preferredNetworks: microservicedemo_backend_network
 
 # Discovery Server Access
 eureka:
   client:
     serviceUrl:
       defaultZone: http://nameserver:1111/eureka/
-  instance:
-    hostname: tracecallback
-    preferIpAddress: false
+  # instance:
+  #   hostname: tracecallback
+  #   preferIpAddress: false
 
 # HTTP Server
 server:

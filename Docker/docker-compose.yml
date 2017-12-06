@@ -144,7 +144,7 @@ services:
         entrypoint:
             - /bin/bash
             - -c
-            - "git pull && mvn spring-boot:run & node number.js"
+            - "git pull && (node number.js &) && mvn spring-boot:run"
         networks:
             - backend_network
         ports:

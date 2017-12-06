@@ -139,4 +139,4 @@ services:
 
 networks:
     microservicedemo_backend_network:
-        driver: default
+        driver: overlay

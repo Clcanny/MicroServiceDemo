@@ -63,6 +63,42 @@ services:
                 window: 3m
 
 
+    mysqlusers:
+        image: mysql:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=microservicedemo
+            - MYSQL_USER=microservicedemo
+            - MYSQL_PASSWORD=microservicedemo
+            - MYSQL_DATABASE=userstable
+        networks:
+            - backend_network
+
+
+    apigateway:
+        image: microservicedemo:latest
+        working_dir: /home/MicroServiceDemo/apiGateway
+        entrypoint:
+            - /bin/bash
+            - -c
+            - "git pull && mvn spring-boot:run"
+        networks:
+            - backend_network
+        ports:
+            - 8443:8443
+        healthcheck:
+            test: ["CMD-SHELL", "curl --fail https://localhost:8443/info"]
+            interval: 2s
+            timeout: 2s
+            retries: 3
+            start_period: 3m
+        deploy:
+            labels:
+                microservice.demo.apigateway: "This label will appear on the apigateway."
+            mode: replicated
+            replicas: 1
+            endpoint_mode: vip
+
+
     tracecallback:
         image: microservicedemo:latest
         working_dir: /home/MicroServiceDemo/traceCallback

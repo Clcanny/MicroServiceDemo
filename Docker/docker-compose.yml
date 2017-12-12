@@ -20,7 +20,7 @@ services:
             interval: 2s
             timeout: 2s
             retries: 3
-            start_period: 5m
+            start_period: 10m
 
         deploy:
             # Specify labels for the service. These labels will only be set on the service, and not on any containers for the service.
@@ -60,7 +60,7 @@ services:
                 # How many times to attempt to restart a container before giving up (default: never give up).
                 max_attempts: 3
                 # How long to wait before deciding if a restart has succeeded, specified as a duration (default: decide immediately).
-                window: 5m
+                window: 10m
 
 
     mysqlusers:
@@ -90,7 +90,7 @@ services:
             interval: 2s
             timeout: 2s
             retries: 3
-            start_period: 5m
+            start_period: 10m
         deploy:
             labels:
                 microservice.demo.apigateway: "This label will appear on the apigateway."
@@ -115,7 +115,7 @@ services:
             interval: 2s
             timeout: 2s
             retries: 3
-            start_period: 5m
+            start_period: 10m
         deploy:
             labels:
                 microservice.demo.tracecallback: "This label will appear on the tracecallback."
@@ -140,7 +140,7 @@ services:
             interval: 2s
             timeout: 2s
             retries: 3
-            start_period: 5m
+            start_period: 10m
         deploy:
             labels:
                 microservice.demo.simpleclient: "This label will appear on the simple client."
@@ -165,7 +165,7 @@ services:
             interval: 2s
             timeout: 2s
             retries: 3
-            start_period: 5m
+            start_period: 10m
         deploy:
             labels:
                 microservice.demo.complicatedclient: "This label will appear on the complicated client."
@@ -190,7 +190,7 @@ services:
             interval: 2s
             timeout: 2s
             retries: 3
-            start_period: 5m
+            start_period: 10m
         deploy:
             labels:
                 microservice.demo.sidecar: "This label will appear on the sidecar."

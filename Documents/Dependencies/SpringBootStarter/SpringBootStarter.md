@@ -2,6 +2,7 @@
 
 + [Spring Boot的启动器Starter详解](http://blog.csdn.net/chszs/article/details/50610474)
 + [Intro to Spring Boot Starters](http://www.baeldung.com/spring-boot-starters)
++ [Spring Boot中Starter是什么](https://www.cnblogs.com/EasonJim/p/7615801.html)
 + [Spring Boot的自动配置、Command-line Runner](https://www.jianshu.com/p/846bb2d26ff8)
 + [Spring Boot：定制自己的starter](Spring Boot：定制自己的starter)
 
@@ -276,6 +277,18 @@ Notice that you don’t need to specify the version number of an artifact. Sprin
     <scope>runtime</scope>
 </dependency>
 ```
+
+# 表格 #
+
+![5](5.jpg)
+
+![6](6.jpg)
+
+![7](7.jpg)
+
+![8](8.jpg)
+
+![9](9.jpg)
 
 # 总结 #
 

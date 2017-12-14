@@ -52,7 +52,6 @@
             <!-- Setup Spring MVC & REST, use Embedded Tomcat -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.5.4.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -62,21 +61,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-
-        <dependency>
             <!-- Eureka for service registration -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
-
-        <!--account-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-security</artifactId>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>demons</groupId>

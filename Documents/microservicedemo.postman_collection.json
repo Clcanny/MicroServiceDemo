@@ -1,0 +1,815 @@
+{
+	"info": {
+		"name": "microservicedemo",
+		"_postman_id": "84c983dc-bc81-5914-72b1-00e93aa64a86",
+		"description": "A microservice demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "nameServer + traceCallback",
+			"description": "",
+			"item": [
+				{
+					"name": "sidecar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:4444/simple-client-service/one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:4444/simple-client-service/one",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"simple-client-service",
+										"one"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:4444/simple-client-service/addParamsInHeader",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x",
+										"value": "1"
+									},
+									{
+										"key": "y",
+										"value": "2"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:4444/simple-client-service/addParamsInHeader",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"simple-client-service",
+										"addParamsInHeader"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:4444/simple-client-service/addParamsInPath/1/2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:4444/simple-client-service/addParamsInPath/1/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"simple-client-service",
+										"addParamsInPath",
+										"1",
+										"2"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:4444/simple-client-service/addParamsInBody",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "x",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "y",
+											"value": "2",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/simple-client-service/addParamsInBody",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"simple-client-service",
+										"addParamsInBody"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:4444/hosts/simple-client-service",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:4444/hosts/simple-client-service",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"hosts",
+										"simple-client-service"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "nameServer",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:1111/hello",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:1111/hello",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1111",
+									"path": [
+										"hello"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:1111/apps",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:1111/apps",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1111",
+									"path": [
+										"apps"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:1111/ips",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:1111/ips",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1111",
+									"path": [
+										"ips"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "http://localhost:6789",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:6789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6789"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "complicatedClient",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:3333/one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3333/one",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"one"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3333/two",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3333/two",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"two"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3333/three",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3333/three",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"three"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3333/four",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "1"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3333/four",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"four"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "complicatedClient + apiGateway",
+			"description": "",
+			"item": [
+				{
+					"name": "https://localhost:8443/complicated-client-service/one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/complicated-client-service/one",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"complicated-client-service",
+								"one"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:8443/complicated-client-service/two",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/complicated-client-service/two",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"complicated-client-service",
+								"two"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:8443/complicated-client-service/three",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/complicated-client-service/three",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"complicated-client-service",
+								"three"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:8443/complicated-client-service/four",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/complicated-client-service/four",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"complicated-client-service",
+								"four"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "simpleClient",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:2222/one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2222/one",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2222",
+							"path": [
+								"one"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:2222/addParamsInPath/1/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2222/addParamsInPath/1/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2222",
+							"path": [
+								"addParamsInPath",
+								"1",
+								"2"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:2222/addParamsInHeader",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x",
+								"value": "1"
+							},
+							{
+								"key": "y",
+								"value": "2"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2222/addParamsInHeader",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2222",
+							"path": [
+								"addParamsInHeader"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:2222/addParamsInBody",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "x",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "y",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2222/addParamsInBody",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2222",
+							"path": [
+								"addParamsInBody"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "simpleClient + apiGateway",
+			"description": "",
+			"item": [
+				{
+					"name": "https://localhost:8443/simple-client-service/one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/simple-client-service/one",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"simple-client-service",
+								"one"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:8443/simple-client-service/addParamsInPath/1/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/simple-client-service/addParamsInPath/1/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"simple-client-service",
+								"addParamsInPath",
+								"1",
+								"2"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:8443/simple-client-service/addParamsInHeader",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x",
+								"value": "1"
+							},
+							{
+								"key": "y",
+								"value": "2"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://localhost:8443/simple-client-service/addParamsInHeader",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"simple-client-service",
+								"addParamsInHeader"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:8443/simple-client-service/addParamsInBody",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "x",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "y",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:8443/simple-client-service/addParamsInBody",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"simple-client-service",
+								"addParamsInBody"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "https://localhost:8443/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "837940593@qq.com"
+					},
+					{
+						"key": "password",
+						"value": "159357"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:8443/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"register"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8443/login",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "837940593@qq.com"
+					},
+					{
+						"key": "password",
+						"value": "159357"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:8443/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"login"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

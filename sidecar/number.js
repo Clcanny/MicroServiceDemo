@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const fetch = require('isomorphic-fetch')
-const getNumber = () => fetch('http://localhost:4444/simple-client-service/number').then((res) => res.json())
+const getNumber = () => fetch('http://localhost:4444/simple-client-service/addParamsInPath/1/1').then((res) => res.json())
 app.get('/health', (req, res) => {  
     res.json({
 	status: 'UP'

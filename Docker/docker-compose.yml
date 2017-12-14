@@ -133,8 +133,6 @@ services:
             - "git pull && mvn spring-boot:run"
         networks:
             - backend_network
-        # ports:
-        #     - 2222:2222
         healthcheck:
             test: ["CMD-SHELL", "curl --fail http://localhost:2222/info"]
             interval: 2s
@@ -158,8 +156,6 @@ services:
             - "git pull && mvn spring-boot:run"
         networks:
             - backend_network
-        # ports:
-        #     - 3333:3333
         healthcheck:
             test: ["CMD-SHELL", "curl --fail http://localhost:3333/info"]
             interval: 2s
@@ -183,14 +179,14 @@ services:
             - "git pull && (node number.js &) && mvn spring-boot:run"
         networks:
             - backend_network
-        # ports:
-        #     - 4444:4444
         healthcheck:
             test: ["CMD-SHELL", "curl --fail http://localhost:4444/info && curl --fail http://localhost:4444/simple-client-service/info && curl --fail http://localhost:4444/hosts/sidecar-service"]
             interval: 2s
             timeout: 2s
             retries: 3
             start_period: 10m
+        depends_on:
+            - "nameserver"
         deploy:
             labels:
                 microservice.demo.sidecar: "This label will appear on the sidecar."

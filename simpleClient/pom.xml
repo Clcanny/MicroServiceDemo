@@ -4,11 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>simpleClient</artifactId>
+    <packaging>jar</packaging>
+
     <name>simpleClient</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
-        <groupId>demons.</groupId>
+        <groupId>demons</groupId>
         <artifactId>microservicedemo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->

@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(name = "sidecar-service")
 public interface NumberFeignClient {
 
-    @GetMapping("/two")
+    @GetMapping("/number")
     public IntegerWrapper getTwo();
 }

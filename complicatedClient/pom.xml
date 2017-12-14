@@ -62,7 +62,6 @@
             <!-- Setup Spring MVC & REST, use Embedded Tomcat -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.5.4.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -70,12 +69,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter</artifactId>
         </dependency>
-
-        <!--<dependency>-->
-            <!--Spring Cloud Config provides server and client-side support for externalized configuration in a distributed system.-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-config</artifactId>-->
-        <!--</dependency>-->
 
         <dependency>
             <!-- Eureka for service registration -->

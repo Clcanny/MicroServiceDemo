@@ -1,4 +1,0 @@
-docker exec 6b25 sh -c "curl -X POST http://10.0.0.7:6789/complicated-client-service/simple-client-service%2520one"
-docker exec 6b25 sh -c "curl -X POST http://10.255.0.7:6789/complicated-client-service/simple-client-service%2520one"
-docker exec 6b25 sh -c "ip addr show"
-（一个容器有三张网卡，应该要登记第三张网卡而不是第一张网卡）

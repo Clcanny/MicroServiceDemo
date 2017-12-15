@@ -11,14 +11,21 @@ RUN apt-get install -y dnsutils
 
 RUN cd /home && git clone https://github.com/Clcanny/MicroServiceDemo.git
 
+WORKDIR /home/MicroServiceDemo
+RUN mvn dependency:go-offline -f grandparent.pom.xml && mvn dependency:resolve-plugins -f grandparent.pom.xml
+RUN mvn install -f grandparent.pom.xml
+
 WORKDIR /home/MicroServiceDemo/communicationClass
 RUN mvn dependency:go-offline && mvn dependency:resolve-plugins
 # RUN mvn package
 # RUN mvn install:install-file -Dfile=target/communicationClass-1.0-SNAPSHOT.jar -DpomFile=pom.xml
-# RUN mvn -N 1.0-SNAPSHOT:update-child-modules
-RUN mvn clean install
+RUN mvn install
 RUN test -d /home/repository/demons/communicationClass
 RUN ls /home/repository/demons/communicationClass
+
+WORKDIR /home/MicroServiceDemo
+RUN mvn dependency:go-offline -f parent.pom.xml && mvn dependency:resolve-plugins -f parent.pom.xml
+RUN mvn install -f parent.pom.xml
 
 WORKDIR /home/MicroServiceDemo
 RUN cd nameServer && mvn dependency:go-offline && mvn dependency:resolve-plugins

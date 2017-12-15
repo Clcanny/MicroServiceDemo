@@ -11,9 +11,9 @@
 
     <parent>
         <groupId>demons</groupId>
-        <artifactId>microservicedemo</artifactId>
+        <artifactId>microservicedemo.parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+        <relativePath>../parent.pom.xml</relativePath>
     </parent>
 
     <dependencies>

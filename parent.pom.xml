@@ -3,24 +3,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sidecar</artifactId>
-    <packaging>jar</packaging>
-
-    <name>sidecar</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>microservicedemo.parent</artifactId>
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>demons</groupId>
-        <artifactId>microservicedemo.parent</artifactId>
+        <artifactId>microservicedemo.grandparent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../parent.pom.xml</relativePath>
+        <relativePath>grandparent.pom.xml</relativePath>
     </parent>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-sidecar</artifactId>
-            <version>1.3.1.RELEASE</version>
+            <groupId>demons</groupId>
+            <artifactId>communicationClass</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

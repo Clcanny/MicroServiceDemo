@@ -461,19 +461,198 @@ Whenever you try to break a software system into components, you're faced with t
 
 # 2. 运行示例 #
 
+```shell
+git clone https://github.com/Clcanny/MicroServiceDemo.git
+cd MicroServiceDemo/Docker
+docker build -t microservicedemo .
+docker stack deploy -c docker-compose.yml microservicedemo
+// 查看各个服务的状态
+docker stack services microservicedemo
+// 删除微服务
+docker stack rm microservicedemo
+```
 
+等待所有的服务启动成功，然后打开 postman
+
+![11](Documents/README/11.jpg)
+
+选择`test.microservicedemo.postman_collection.json`，导入 collection
+
+![12](Documents/README/12.jpg)
+
+选择`microservicedemo.environment.postman_environment.json`，导入 environment
+
+注意 Bear Token 是会过期的，一旦过期，通过 login API 重新获取一个，然后填写到 environment 里
+
+由于我们的数据库文件没有挂载到宿主机的文件系统下，所以每次重启服务都需要重新注册：
+
+![13](Documents/README/13.jpg)
+
+然后就可以测试我们的部署是否成功：
+
+![14](Documents/README/14.jpg)
+
+![15](Documents/README/15.jpg)
+
+注意选择环境，否则不能通过 API 网关
+
+如果运行成功，说明示例没有问题
 
 # 3. 简化依赖项 #
 
+在没有简化依赖项之前，所有的项目的依赖项都很混乱，同时存在大量重复，至少有两个问题：
+
++ 不便于管理（看看200多行的依赖项，还全是各种各样的版本，会不会有兼容性问题？）
++ 不便于升级依赖项（全靠手工一个一个改）
+
 ## 3.1 父依赖文件 ##
+
+这主要是解决重复问题，我们发现以下几个项目的依赖项存在大量重复：
+
++ simpleClient
++ complicatedClient
++ sidecar
++ nameServer
++ traceCallback
++ apiGateway
+
+所以我们在它们共同的父文件夹下创建了`pom.xml`，把相同的依赖项集中起来
+
+后来我们又发现，communicationClass 也与之前的项目的依赖项存在太多的重复
+
+但 communicationClass 不能直接使用父文件夹下的 pom.xml，因为父文件夹下的 pom.xml 的其中一个依赖项就是 communicationClass，会导致环形引用
+
+于是我们采取了这样的一套方案：
+
++ grandparent.pom.xml <- parent.pom.xml <- pom.xml of simpleClient
++ grandparent.pom.xml <- parent.pom.xml <- pom.xml of complicatedClient
++ ……
++ grandparent.pom.xml <- pom.xml of communicationClass
+
+化简之后的结果（simpleClient）：
+
+![16](Documents/README/16.jpg)
+
+注意：我们没有重复`groupId`与`version`，而是采用了 grandparent.pom.xml 中的配置
+
+![17](Documents/README/17.jpg)
+
+最后一点：grandparent.pom.xml 与 parent.pom.xml 放在同一个文件夹下
+
+这里稍微有坑的是：grandparent.pom.xml 需要安装到本地 maven 仓库，否则会对后续项目的构建带来影响（具体做法可以参考 Dockerfile 文件）
 
 ## 3.2 启动器 ##
 
+总的来说，启动器代表着一系列相关的依赖项
+
+一个启动器约等于一系列相关的 / 完成某个任务都需要用到的依赖项
+
+具体参考 Documents/Dependencies/SpringBootStarter/SpringBootStarter.md
+
+## 3.3 依赖项版本管理 ##
+
+我们常见的依赖项是这样写的：
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>1.5.9.RELEASE</version>
+</dependency>
+```
+
+如果每一个依赖项都有一个版本，首先是看着就很繁琐，其次是还有兼容性问题
+
+我们出一个大招解决它（在 grandparent.pom.xml 文件中）：
+
+![18](Documents/README/18.jpg)
+
+几乎所有的启动器依赖项都不需要写版本号（在我们的项目中，所有的启动器依赖项都不需要写版本号）
+
+那我们还有一个疑惑，其它项目的 parent 是 grandparent.pom.xml 或者是 parent.pom.xml，对应的版本号是 `0.0.1-SNAPSHOT`（不妨以 simpleClient 为例）：
+
+![19](Documents/README/19.jpg)
+
+那么，simpleClient 的启动器的版本是`0.0.1-SNAPSHOT`还是`1.5.4.RELEASE`？
+
+通过`mvn help:effective-pom`命令来查看真实生效的 pom.xml：
+
+![20](Documents/README/20.jpg)
+
+![21](Documents/README/21.jpg)
+
+很显然：是`1.5.4.RELEASE`
+
 # 4. 与容器技术配合 #
+
+诸多服务的一键部署离不开容器技术
 
 ## 4.1 Dockerfile ##
 
+### Part 1 ###
+
+![22](Documents/README/22.jpg)
+
+`/home/repository`是 maven 本地仓库的地址（修改 maven 的默认仓库地址主要是防止缓存在镜像构建过程中被删除）
+
+settings.xml 有两个作用：
+
++ 使用阿里提供的仓库，加快依赖项的下载速度
++ 修改 maven 默认仓库的位置
+
+![23](Documents/README/23.jpg)
+
+### Part 2 ###
+
+![24](Documents/README/24.jpg)
+
+替换源（使用163提供的源）的目的是使得软件下载更快
+
+dnsutils 主要提供 nslookup 之类的工具（nslookup 会帮助我们判断在名服务器上登记的地址是否正确）
+
+### Part 3 ###
+
+![25](Documents/README/25.jpg)
+
+`mvn dependency:go-ofline`命令与`mvn dependency:resolve-plugins`命令都是缓存依赖项的命令，它们能够提升我们启动服务的实践（不需要花大量的实践去阿里的仓库下载依赖项）
+
+`mvn install`命令是把 grandparent.pom.xml 安装到本地仓库
+
+![26](Documents/README/26.jpg)
+
+parent.pom.xml 同理
+
+### Part 4 ###
+
+![27](Documents/README/27.jpg)
+
+把 communicationClass 安装到本地仓库
+
+因为我们在这里跌过跟头，所以我们专门添加了两条测试命令去看安装是否成功（或者说缓存是否随着中间容器的移除而消失）
+
+### Part 5 ###
+
+![28](Documents/README/28.jpg)
+
+安装 node 并且安装相关依赖包，支持 number.js 的运行
+
 ## 4.2 docker-compose.yml ##
+
+![29](Documents/README/29.jpg)
+
+大多数都不言自明，只有几个地方需要注意：
+
++ `networks`用于指定服务参与的网络（决定容器内的网卡数量？）
++ `start_period`用于指定服务启动的时间，在这段时间内没有通过测试命令也不会关掉容器（并开启一个新容器）
++ `depends_on`用于指定哪些服务需要先于本服务启动
++ `endpoint_mode`用于指定容器的 IP 地址是如何分配的（好像不太准确？），因为要使用客户端负载均衡，我们选择`vip`，即虚拟 IP（virtual ip）；另外一种模式是用于服务端负载均衡的（好像是 Docker 帮我们做负载均衡）？
+
+![30](Documents/README/30.jpg)
+
+我们需要创建一个网路用于容器间通信（不使用默认网络是因为我想自己命名网络）
+
+在后面我们会看到网络名字非常重要，它能够告诉每一个服务：向名服务注册哪张网卡的 IP 地址
 
 ## 4.3 application.yaml ##
 
@@ -530,3 +709,5 @@ Whenever you try to break a software system into components, you're faced with t
 [version_0.3](Documents/version_0.3/version_0.3.md)
 
 [Microservices](https://martinfowler.com/articles/microservices.html)
+
+[SpringBootStarter](Documents/Dependencies/SpringBootStarter/SpringBootStarter.md)

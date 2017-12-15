@@ -13,8 +13,10 @@ RUN cd /home && git clone https://github.com/Clcanny/MicroServiceDemo.git
 
 WORKDIR /home/MicroServiceDemo/communicationClass
 RUN mvn dependency:go-offline && mvn dependency:resolve-plugins
-RUN mvn package
-RUN mvn install:install-file -Dfile=target/communicationClass-1.0-SNAPSHOT.jar -DpomFile=pom.xml
+# RUN mvn package
+# RUN mvn install:install-file -Dfile=target/communicationClass-1.0-SNAPSHOT.jar -DpomFile=pom.xml
+# RUN mvn -N 1.0-SNAPSHOT:update-child-modules
+RUN mvn clean install
 RUN test -d /home/repository/demons/communicationClass
 RUN ls /home/repository/demons/communicationClass
 

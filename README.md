@@ -728,7 +728,21 @@ vim nameServer/src/main/resources/application.yaml
 
 # 5. 微服务互相访问 #
 
+服务作为组件的一种存在方式，必定要访问其它服务，也必定要让其它服务访问
+
 ## 5.1 名服务器 & 服务端负载均衡 ##
+
+![39](Documents/README/39.jpg)
+
+写一个名服务就是如此简单，你只需要一个 annotation（注解）：`@EnableEurekaServer`
+
+![40](Documents/README/40.jpg)
+
+![41](Documents/README/41.jpg)
+
+以上两个是我们额外提供的接口，尤其`ips`很重要
+
+使用`ips`可以让我们看到当前注册进来的 IP 地址，这可以帮助我们判别一些设置是否正确（主要是注册进来的 IP 地址是否是我们想要的）
 
 ## 5.2 Java -> Java ##
 

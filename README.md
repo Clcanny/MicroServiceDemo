@@ -654,7 +654,77 @@ parent.pom.xml 同理
 
 在后面我们会看到网络名字非常重要，它能够告诉每一个服务：向名服务注册哪张网卡的 IP 地址
 
+通过`docker network ls`命令和`docker network inspect microservicedemo_backend_network`命令可以查看网络状态
+
 ## 4.3 application.yaml ##
+
+### 4.3.1 simpleClient ###
+
+```shell
+vim simpleClient/src/main/resources/application.yaml
+```
+
+![31](Documents/README/31.jpg)
+
+`spring-application-name`决定当前服务的名字（在向名服务注册的时候会用到这个名字，名字可以作为服务的唯一标识符），其它服务会通过`http://SIMPLE-CLIENT-SERVICE/...`来访问相应的接口
+
+`spring-cloud-inetutils-preferredNetworks`决定当前服务的可访问 IP 地址，我们知道一个容器会有不止一张虚拟网卡，导致一个容器具有不止一个 IP 地址；因此，我们必须告诉 simpleClient 服务：向名服务注册哪一个 IP 地址
+
+![32](Documents/README/32.jpg)
+
+`eureka-client-serviceUrl-defaultZone`告诉 simpleClient 服务：名服务的地址
+
+其中我们使用 nameserver 作为网址名，隐式地使用了 Docker 提供的服务端负载均衡
+
+`eureka-instance-preferIpAddress`与`eureka-instance-preferIpAddress`配合起来是解决“向名服务器注册的 IP 地址其它服务不可访问”的问题的，不过有人指出这样做事实上使用了 Docker 提供的服务端负载均衡而不是我们所希望的客户端负载均衡
+
+我猜测这两个选项的作用是：
+
++ 不使用 IP 地址向名服务注册
++ 而使用 hostname 向名服务注册
+
+所以，当其它服务的实例想要访问 simpleClient 的时候，从名服务拿到的地址是 simpleClient 而不是 list of ips；访问 simpleClient 实际上还是使用由 Docker 提供的服务端负载均衡
+
+所以我们不采用这两个选项（在写完这段文字之后，我删掉了这两个选项）
+
+![33](Documents/README/33.jpg)
+
+`server-port`是在配置 Tomcat 监听的端口
+
+![34](Documents/README/34.jpg)
+
+`ribbon-eurela-enabled`用于开启客户端负载均衡
+
+### 4.3.2 apiGateway ###
+
+```shell
+vim apiGateway/src/main/resources/application.yaml
+```
+
+![35](Documents/README/35.jpg)
+
+`eureka-client-registerWithEureka`配置 apiGateway 不要向名服务注册自己，因为没有其它服务需要使用 apiGateway 提供的服务 / 接口；因此，也不需要使用`spring-cloud-inetutils-preferredNetworks`选项
+
+![36](Documents/README/36.jpg)
+
+主要关注一下数据库相关的配置
+
+![37](Documents/README/37.jpg)
+
+主要关注一下 SSL / HTTPS 相关的配置，这部分还需要：
+
++ 代码
++ 额外的文件
+
+支持（我们在后面会讲怎么配置）
+
+### 4.3.3 nameServer ###
+
+```shell
+vim nameServer/src/main/resources/application.yaml
+```
+
+![38](Documents/README/38.jpg)
 
 # 5. 微服务互相访问 #
 

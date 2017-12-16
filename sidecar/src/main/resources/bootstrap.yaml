@@ -9,9 +9,6 @@ eureka:
   client:
     serviceUrl:
         defaultZone: http://nameserver:1111/eureka/
-  # instance:
-  #   hostname: sidecar
-  #   preferIpAddress: false
 
 sidecar:
   port: 8000

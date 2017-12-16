@@ -11,9 +11,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://nameserver:1111/eureka/
-  # instance:
-  #   hostname: simpleclient
-  #   preferIpAddress: false
 
 # HTTP Server
 server:

@@ -726,7 +726,7 @@ vim nameServer/src/main/resources/application.yaml
 
 ![38](Documents/README/38.jpg)
 
-# 5. 微服务互相访问 #
+# 5. 服务互相访问 #
 
 服务作为组件的一种存在方式，必定要访问其它服务，也必定要让其它服务访问
 
@@ -744,7 +744,75 @@ vim nameServer/src/main/resources/application.yaml
 
 使用`ips`可以让我们看到当前注册进来的 IP 地址，这可以帮助我们判别一些设置是否正确（主要是注册进来的 IP 地址是否是我们想要的）
 
+
+
+其它服务如何找到名服务呢？
+
++ 开放名服务的端口（通过端口映射），其它服务通过`localhost:1111`或者`192.168.xxx.xxx`来访问名服务；这样做的缺点是：手动指定名服务所在的容器所运行的物理机
++ 直接使用`http://nameserver:1111`来访问名服务（借助 Docker 提供的服务端负载均衡）
+
 ## 5.2 Java -> Java ##
+
+### 5.2.1 simpleClient API ###
+
+![42](Documents/README/42.jpg)
+
+关于`IntegerWrapper`我们会在后面详细介绍，简单来说：
+
++ simpleClient 与 complicatedClient 交互需要使用相同的数据结构
++ 我们可以在两边都写两个具有相同“布局”的类（可以叫不一样的名字），这样很自由
++ 当然也可以，把这种交互使用的数据结构放到库中
+
+我们使用了第二种方式，也就产生了`IntegerWrapper`
+
+### 5.2.2 What's the difference between EnableEurekaClient and EnableDiscoveryClient? ###
+
+![43](Documents/README/43.jpg)
+
+![44](Documents/README/44.jpg)
+
+所以，我们上图的写法是多余的，我们决定保留`@EnableEurekaClient`而抛弃`@EnableDiscoveryClient`
+
+![45](Documents/README/45.jpg)
+
+### 5.2.3 complicatedClient 如何使用 simpleClient 提供的 API ###
+
+![46](Documents/README/46.jpg)
+
+complicatedClient 访问 simpleClient 最重要的武器是 `SimpleClientService`
+
+#### 5.2.3.1 @Service ####
+
+![47](Documents/README/47.jpg)
+
+#### 5.2.3.2 RestTemplate ####
+
+`RestTemplate`的作用是：
+
++ 从名服务获取需要请求的服务（在这里是 simpleClient）的 IP 地址列表
++ 从中选取一个 IP 地址
++ 向这个 IP 地址发出请求
++ 把收到的结果“翻译”成对象
+
+换言之，把`http://simple-client-service/some-api`换成`http://10.xxx.xxx.xxx/some-api`并请求之
+
+然后把得到的回复翻译成对象
+
+#### 5.2.3.4 serviceUrl 由谁提供 ####
+
+![48](Documents/README/48.jpg)
+
+没错，`serviceUrl`不是框架为我们提供的，而是我们自己提供的
+
+这也是一种有意思的方式：如何提供`Bean`
+
+#### 5.2.3.4 使用 serviceUrl ####
+
+![49](Documents/README/49.jpg)
+
+![50](Documents/README/50.jpg)
+
+
 
 ## 5.3 Java -> Node ##
 

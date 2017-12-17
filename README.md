@@ -812,19 +812,88 @@ complicatedClient 访问 simpleClient 最重要的武器是 `SimpleClientService
 
 ![50](Documents/README/50.jpg)
 
-
-
 ## 5.3 Java -> Node ##
 
+### 5.3.1 Node API ###
+
+![51](Documents/README/51.jpg)
+
+`health`显然是用来检测服务是否健康的
+
+其余的 API 都是提供给其它服务使用的
+
+### 5.3.2 配置 sidecar ###
+
+![52](Documents/README/52.jpg)
+
+![53](Documents/README/53.jpg)
+
+### 5.3.3 配置 FeignClient ###
+
+从其它服务是不能直接访问用 Node 编写的服务的：
+
++ 先访问`http://xxx.xxx.xxx.xxx:4444/hosts/sidecar-service`以获取用 Node 编写的服务的 IP 地址和端口
++ 然后再直接访问它
+
+（这真是一个非常坑爹的设定，有空的话我们自己改写 sidecar，哼）
+
+所以，假如我们用 complicatedClient 访问 number.js，我们会借助一个工具自动化地帮我们做那两件事：FeignClient
+
+![54](Documents/README/54.jpg)
+
+![55](Documents/README/55.jpg)
+
+![56](Documents/README/56.jpg)
+
 ## 5.4 Node -> Java ##
+
+![57](Documents/README/57.jpg)
+
+这是一件非常简单的事情：`http://localhost:4444/服务名/API`
 
 # 6. communictionClass #
 
 ## 6.1 非侵入式截取请求 & traceCallback ##
 
+这一部分的设计目的是：记录服务之间的互相调用关系
+
+![58](Documents/README/58.jpg)
+
+我们的`RestTemplate`与`Spring`的`RestTemplate`同名，这样可以对代码的侵入性降到最低（基本只要改变`import`语句即可）
+
+![59](Documents/README/59.jpg)
+
+我们会去读取配置文件以获取服务名称，不要忘了，communicationClass 只是一个库而不是一个服务，所以读取到的值会是使用该库的服务的名称（比如说 simpleClient 或 complicatedClient）
+
+![60](Documents/README/60.jpg)
+
+为什么重载`doExecute`方法？需要读原版`RestTemplate`的源代码，我们在这里不再分析
+
+
+
+还有更好的目的达到相同的目的吗？
+
+当然有：请求拦截器 + 用缓存减少访问 traceCallback 的次数 + 写成注解的形式
+
+```java
+@Autowired
+@MyAnnotation
+@LoadBalance
+RestTemplate restTemplate;
+```
+
 ## 6.2 微服务交换数据 ##
 
+不同的服务需要交换数据，这些数据的数据结构可以一起写到`communicationClass`里
+
+（当然也可以不写，现在看来不使用公共的数据结构是正确的，宁可在不同的服务中重复一点代码）
+
 # 7. 鉴权与安全 #
+
+到现在，我们已经解决了服务之间互相访问的问题，却没有解决另一个核心问题：用户怎么访问这些服务呢？
+
++ 直接开放服务的端口
++ API 网关
 
 ## 7.1 转发技术 ##
 
